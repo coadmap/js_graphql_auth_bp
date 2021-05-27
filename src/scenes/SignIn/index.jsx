@@ -24,7 +24,6 @@ const SignIn = () => {
 				</Form.Item>
 			</Form>
 		</div>
-
 	)
 }
 export default SignIn
