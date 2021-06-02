@@ -1,10 +1,8 @@
-import { accountState } from "../../data/account";
 import { Route, Redirect } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import useCurrentAccount from "../hooks/useCurrentAccount";
 
 const AuthRouter = ({ component: Component, ...rest }) => {
-  const account = useRecoilValue(accountState);
-  console.log(account);
+  const { account } = useCurrentAccount();
   return (
     <Route
       {...rest}

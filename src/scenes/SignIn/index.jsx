@@ -3,14 +3,18 @@ import { useHistory } from "react-router";
 import styles from "./style.module.scss";
 import { useMutation } from "@apollo/client";
 import { SIGN_IN_ACCOUNT_MUTATION } from "../../data/account/graphql/mutation";
+import PersistenceKeys from "../../commons/constants/persistenceKeys";
+import useCurrentAccount from "../../commons/hooks/useCurrentAccount";
 const SignIn = () => {
   const history = useHistory();
-  const [signIn, { data }] = useMutation(SIGN_IN_ACCOUNT_MUTATION);
+  const { setCurrentAccount } = useCurrentAccount();
+  const [signIn] = useMutation(SIGN_IN_ACCOUNT_MUTATION);
 
   const onFinish = async (value) => {
-    await signIn({ variables: { email: value.email, password: value.password } });
+    const { data } = await signIn({ variables: { email: value.email, password: value.password } });
     notification.success({ message: "ログインに成功しました" });
-    console.log(data);
+    localStorage.setItem(PersistenceKeys.AUTH_TOKEN, data.signInAccount.token);
+    setCurrentAccount(data.signInAccount);
     history.push("/");
   };
 
