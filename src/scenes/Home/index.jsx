@@ -1,9 +1,14 @@
-const Home = () => {
-	return (
-		<div>
-			<h1>Home</h1>
-		</div>
-	)
-}
+import { Button } from "antd";
+import useCurrentAccount from "hooks/useCurrentAccount";
 
-export default Home
+const Home = () => {
+  const { signOut } = useCurrentAccount();
+  return (
+    <div>
+      <h1>Home</h1>
+      <Button onClick={signOut}>ログアウト</Button>
+    </div>
+  );
+};
+
+export default Home;
