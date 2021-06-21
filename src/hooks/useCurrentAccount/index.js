@@ -2,7 +2,7 @@ import { atom, useRecoilState } from "recoil";
 import { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CURRENT_ACCOUNT } from "data/account/graphql/query";
-import PersistenceKeys from "commons/constants/persistenceKeys";
+import PersistenceKeys from "utilities/constants/persistenceKeys";
 const accountState = atom({
   key: "accountState",
   default: undefined,

@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import styles from "./style.module.scss";
 import { useMutation } from "@apollo/client";
 import { SIGN_IN_ACCOUNT_MUTATION } from "data/account/graphql/mutation";
-import PersistenceKeys from "commons/constants/persistenceKeys";
+import PersistenceKeys from "utilities/constants/persistenceKeys";
 import useCurrentAccount from "hooks/useCurrentAccount";
 const SignIn = () => {
   const history = useHistory();

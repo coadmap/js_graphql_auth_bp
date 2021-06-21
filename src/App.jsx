@@ -3,11 +3,11 @@ import Home from "./scenes/Home";
 import SignIn from "./scenes/SignIn";
 import SignUp from "./scenes/SignUp";
 import { ApolloProvider } from "@apollo/client";
-import client from "./data/utilities/graphqlClient";
+import client from "./utilities/graphqlClient";
 import "./styles/App.less";
 import "./styles/global.scss";
 import { RecoilRoot } from "recoil";
-import AuthRouter from "./commons/AuthRouter";
+import AuthRouter from "./utilities/AuthRouter";
 
 const App = () => {
   return (
