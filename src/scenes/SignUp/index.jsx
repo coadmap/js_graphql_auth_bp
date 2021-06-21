@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import styles from "./style.module.scss";
 import { useMutation } from "@apollo/client";
 import { SIGN_UP_ACCOUNT_MUTATION } from "data/account/graphql/mutation";
+import PersistenceKeys from "../../utilities/constants/persistenceKeys";
 const SignUp = () => {
   const history = useHistory();
   const [signUp, { data }] = useMutation(SIGN_UP_ACCOUNT_MUTATION);
@@ -18,7 +19,7 @@ const SignUp = () => {
       },
     });
     notification.success({ message: "新規登録に成功しました" });
-    console.log(data);
+    localStorage.setItem(PersistenceKeys.AUTH_TOKEN, data.token);
     history.push("/");
   };
   return (

@@ -1,12 +1,12 @@
 import { Route, Redirect } from "react-router-dom";
-import useCurrentAccount from "hooks/useCurrentAccount";
+import PersistenceKeys from "../constants/persistenceKeys";
 
 const AuthRouter = ({ component: Component, ...rest }) => {
-  const { account } = useCurrentAccount();
+  const token = localStorage.getItem(PersistenceKeys.AUTH_TOKEN);
   return (
     <Route
       {...rest}
-      render={(props) => (account ? <Component {...props} /> : <Redirect to="/sign_in" />)}
+      render={(props) => (token ? <Component {...props} /> : <Redirect to="/sign_in" />)}
     />
   );
 };
