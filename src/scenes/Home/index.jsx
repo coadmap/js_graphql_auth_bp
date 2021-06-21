@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import useCurrentAccount from "../../commons/hooks/useCurrentAccount";
+import useCurrentAccount from "hooks/useCurrentAccount";
 
 const Home = () => {
   const { signOut } = useCurrentAccount();

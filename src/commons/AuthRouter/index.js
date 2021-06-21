@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import useCurrentAccount from "../hooks/useCurrentAccount";
+import useCurrentAccount from "hooks/useCurrentAccount";
 
 const AuthRouter = ({ component: Component, ...rest }) => {
   const { account } = useCurrentAccount();

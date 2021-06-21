@@ -2,7 +2,7 @@ import { Button, Form, Input, notification } from "antd";
 import { useHistory } from "react-router";
 import styles from "./style.module.scss";
 import { useMutation } from "@apollo/client";
-import { SIGN_UP_ACCOUNT_MUTATION } from "../../data/account/graphql/mutation";
+import { SIGN_UP_ACCOUNT_MUTATION } from "data/account/graphql/mutation";
 const SignUp = () => {
   const history = useHistory();
   const [signUp, { data }] = useMutation(SIGN_UP_ACCOUNT_MUTATION);
