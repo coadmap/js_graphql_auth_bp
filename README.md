@@ -27,16 +27,6 @@ npm start
 http://localhost:3500
 で立ち上がります。
 
-2. モックサーバーを立ち上げる
-   
-https://github.com/coadmap/tick_note_specをcloseする
-
-```
-npm install
-npm run build(schema.graphqlファイルを作成する)
-npm start(モックサーバーを立ち上げる)
-```
-
 ### フォルダ構造(src内)
 <pre>
 └── src
